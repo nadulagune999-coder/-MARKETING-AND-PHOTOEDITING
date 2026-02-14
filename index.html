@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝙉² MARKETING AND PHOTOEDITING</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        n2: {
+                            primary: '#00ff9d', // Neon Green
+                            secondary: '#00ccff', // Neon Blue
+                            dark: '#0a0a0a',
+                            surface: '#121212',
+                            accent: '#ff0055' // Neon Pink
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        glow: {
+                            'from': { boxShadow: '0 0 10px #00ff9d, 0 0 20px #00ff9d' },
+                            'to': { boxShadow: '0 0 20px #00ff9d, 0 0 30px #00ff9d' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+        }
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.7), 0 0 20px rgba(0, 255, 157, 0.5);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #00ff9d, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ff9d;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="font-display text-3xl font-bold tracking-wider hover:text-n2-primary transition-colors">
+                        𝙉<sup class="text-n2-primary">2</sup>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-n2-primary font-medium border-b-2 border-n2-primary px-3 py-2 text-sm transition-all">HOME</a>
+                        <a href="services.html" class="text-gray-300 hover:text-white hover:border-b-2 hover:border-n2-secondary px-3 py-2 text-sm font-medium transition-all">SERVICES</a>
+                        <a href="portfolio.html" class="text-gray-300 hover:text-white hover:border-b-2 hover:border-n2-accent px-3 py-2 text-sm font-medium transition-all">PORTFOLIO</a>
+                        <a href="contact.html" class="bg-gradient-to-r from-n2-primary to-n2-secondary text-black px-6 py-2 rounded-full text-sm font-bold hover:shadow-[0_0_20px_rgba(0,255,157,0.5)] transition-all transform hover:scale-105">CONTACT</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-btn">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-black border-b border-gray-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-n2-primary block px-3 py-2 rounded-md text-base font-medium">HOME</a>
+                <a href="services.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">SERVICES</a>
+                <a href="portfolio.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">PORTFOLIO</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 via-n2-dark to-black pt-20">
+        <!-- Animated Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-n2-primary rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+            <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-n2-secondary rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-72 h-72 bg-n2-accent rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight leading-none" data-aos="fade-up" data-aos-duration="1000">
+                ELEVATE YOUR <br>
+                <span class="gradient-text">DIGITAL PRESENCE</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400 font-light" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                Premium Branding, Cutting-Edge Design & Viral Content Creation.
+                We craft visual identities that demand attention.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                <a href="services.html" class="relative px-8 py-4 bg-transparent border border-n2-primary text-n2-primary font-bold rounded-lg overflow-hidden group transition-all hover:text-black">
+                    <span class="absolute top-0 left-0 w-full h-full bg-n2-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></span>
+                    <span class="relative z-10 flex items-center justify-center">
+                        EXPLORE SERVICES <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                </a>
+                <a href="contact.html" class="px-8 py-4 bg-gray-800 text-white font-bold rounded-lg hover:bg-gray-700 transition-all border border-gray-700">
+                    GET A QUOTE
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Brief Services Section -->
+    <section class="py-20 bg-black relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">WHAT WE <span class="text-n2-primary">CREATE</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-n2-primary to-transparent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-n2-surface p-8 rounded-2xl border border-gray-800 hover:border-n2-primary transition-all duration-300 group hover:-translate-y-2" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-n2-primary group-hover:text-black transition-colors">
+                        <i class="fas fa-tshirt text-2xl text-n2-primary group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-display">T-Shirt Design</h3>
+                    <p class="text-gray-400 mb-4">Custom, high-impact designs for your brand or merchandise line.</p>
+                    <span class="text-n2-primary font-bold text-xl">$15.00</span>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-n2-surface p-8 rounded-2xl border border-gray-800 hover:border-n2-secondary transition-all duration-300 group hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-n2-secondary group-hover:text-black transition-colors">
+                        <i class="fas fa-vector-square text-2xl text-n2-secondary group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-display">Logo Design</h3>
+                    <p class="text-gray-400 mb-4">Memorable brand identities that stand out in the marketplace.</p>
+                    <span class="text-n2-secondary font-bold text-xl">$23.90</span>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-n2-surface p-8 rounded-2xl border border-gray-800 hover:border-n2-accent transition-all duration-300 group hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-n2-accent group-hover:text-black transition-colors">
+                        <i class="fas fa-play text-2xl text-n2-accent group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-display">YouTube Thumbnails</h3>
+                    <p class="text-gray-400 mb-4">Click-worthy thumbnails designed to boost your CTR and views.</p>
+                    <span class="text-n2-accent font-bold text-xl">$3.00</span>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="services.html" class="inline-block text-white hover:text-n2-primary font-bold text-lg transition-colors border-b border-transparent hover:border-n2-primary pb-1">
+                    View All Services & Pricing <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-n2-primary to-n2-secondary opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-6" data-aos="zoom-in">READY TO DOMINATE?</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Join the ranks of successful creators and brands who trust 𝙉² for their visual identity.</p>
+            <a href="contact.html" class="inline-block bg-white text-black font-black py-4 px-10 rounded-full hover:bg-gray-200 transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+                START YOUR PROJECT
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="index.html" class="font-display text-3xl font-bold tracking-wider text-white mb-4 block">
+                        𝙉<sup class="text-n2-primary">2</sup>
+                    </a>
+                    <p class="text-gray-500 max-w-sm">
+                        Professional photo editing and digital marketing design services. We bring your creative vision to life with precision and style.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-500 hover:text-n2-primary transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-500 hover:text-n2-primary transition-colors">Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-500 hover:text-n2-primary transition-colors">Portfolio</a></li>
+                        <li><a href="contact.html" class="text-gray-500 hover:text-n2-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Contact</h4>
+                    <p class="text-gray-500 mb-2"><i class="fas fa-phone mr-2 text-n2-primary"></i> 076 749 0116</p>
+                    <p class="text-gray-500 mb-2"><i class="fas fa-envelope mr-2 text-n2-primary"></i> contact@n2marketing.com</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-900 pt-8 text-center">
+                <p class="text-gray-600 text-sm">&copy; 2024 𝙉² Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
