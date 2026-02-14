@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | 𝙉² MARKETING</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'], display: ['Orbitron', 'sans-serif'], },
+                    colors: { n2: { primary: '#00ff9d', secondary: '#00ccff', dark: '#0a0a0a', surface: '#121212', accent: '#ff0055' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .input-field:focus {
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+            border-color: #00ff9d;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <!-- Nav (Shared) -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html"
+                    class="font-display text-3xl font-bold tracking-wider hover:text-n2-primary transition-colors">𝙉<sup
+                        class="text-n2-primary">2</sup></a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">HOME</a>
+                        <a href="services.html"
+                            class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">SERVICES</a>
+                        <a href="portfolio.html"
+                            class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">PORTFOLIO</a>
+                        <a href="contact.html"
+                            class="bg-gradient-to-r from-n2-primary to-n2-secondary text-black px-6 py-2 rounded-full text-sm font-bold hover:shadow-lg transition-all">CONTACT</a>
+                    </div>
+                </div>
+                <!-- Mobile button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+                        id="mobile-menu-btn">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-black border-b border-gray-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">HOME</a>
+                <a href="services.html"
+                    class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">SERVICES</a>
+                <a href="portfolio.html"
+                    class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">PORTFOLIO</a>
+                <a href="contact.html"
+                    class="text-n2-primary block px-3 py-2 rounded-md text-base font-medium">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="min-h-screen pt-32 pb-20 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div
+            class="absolute top-0 right-0 w-1/2 h-full bg-n2-secondary opacity-5 blur-3xl transform translate-x-1/2 pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <!-- Info Section -->
+                <div data-aos="fade-right">
+                    <h1 class="font-display text-5xl font-black mb-8 leading-tight">LET'S BUILD <br><span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-n2-primary to-n2-secondary">SOMETHING
+                            EPIC</span></h1>
+                    <p class="text-gray-400 text-lg mb-12">Ready to take your brand to the next level? Get in touch for
+                        a custom quote or just to say hello.</p>
+
+                    <div class="space-y-8">
+                        <div class="flex items-center group">
+                            <div
+                                class="w-14 h-14 bg-gray-900 rounded-full flex items-center justify-center mr-6 group-hover:bg-n2-primary group-hover:text-black transition-all">
+                                <i class="fas fa-phone-alt text-xl text-n2-primary group-hover:text-black"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-300 text-sm">PHONE / WHATSAPP</h3>
+                                <p
+                                    class="text-2xl font-display font-bold text-white group-hover:text-n2-primary transition-colors">
+                                    076 749 0116</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center group">
+                            <div
+                                class="w-14 h-14 bg-gray-900 rounded-full flex items-center justify-center mr-6 group-hover:bg-n2-secondary group-hover:text-black transition-all">
+                                <i class="fas fa-envelope text-xl text-n2-secondary group-hover:text-black"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-300 text-sm">EMAIL</h3>
+                                <p
+                                    class="text-xl font-medium text-white group-hover:text-n2-secondary transition-colors">
+                                    contact@n2marketing.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center group">
+                            <div
+                                class="w-14 h-14 bg-gray-900 rounded-full flex items-center justify-center mr-6 group-hover:bg-n2-accent group-hover:text-black transition-all">
+                                <i class="fas fa-map-marker-alt text-xl text-n2-accent group-hover:text-black"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-300 text-sm">LOCATION</h3>
+                                <p class="text-xl font-medium text-white group-hover:text-n2-accent transition-colors">
+                                    Remote / Worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-6 mt-12">
+                        <a href="#"
+                            class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all transform hover:-translate-y-1"><i
+                                class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all transform hover:-translate-y-1"><i
+                                class="fab fa-instagram text-xl"></i></a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all transform hover:-translate-y-1"><i
+                                class="fab fa-linkedin-in text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Form Section -->
+                <div class="bg-n2-surface p-8 md:p-12 rounded-3xl border border-gray-800 shadow-2xl"
+                    data-aos="fade-left">
+                    <h2 class="font-display text-2xl font-bold mb-8">Send a Message</h2>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                                <input type="text"
+                                    class="input-field w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-n2-primary transition-all"
+                                    placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                                <input type="email"
+                                    class="input-field w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-n2-primary transition-all"
+                                    placeholder="email@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Service Interested In</label>
+                            <select
+                                class="input-field w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-n2-primary transition-all appearance-none cursor-pointer">
+                                <option>Select a service...</option>
+                                <option>T-Shirt Design ($15)</option>
+                                <option>Logo Design ($23.90)</option>
+                                <option>YouTube Thumbnail ($3)</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                            <textarea rows="4"
+                                class="input-field w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-n2-primary transition-all"
+                                placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="button"
+                            class="w-full bg-gradient-to-r from-n2-primary to-n2-secondary text-black font-black py-4 rounded-lg hover:shadow-[0_0_20px_rgba(0,255,157,0.4)] transition-all transform hover:-translate-y-1 uppercase tracking-wide">
+                            SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
