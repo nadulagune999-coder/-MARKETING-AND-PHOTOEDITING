@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | 𝙉² MARKETING</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'], display: ['Orbitron', 'sans-serif'], },
+                    colors: { n2: { primary: '#00ff9d', secondary: '#00ccff', dark: '#0a0a0a', surface: '#121212', accent: '#ff0055' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .filter-btn.active {
+            background-color: #00ff9d;
+            color: black;
+            border-color: #00ff9d;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="font-display text-3xl font-bold tracking-wider">𝙉<sup
+                        class="text-n2-primary">2</sup></a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">HOME</a>
+                        <a href="services.html"
+                            class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">SERVICES</a>
+                        <a href="portfolio.html"
+                            class="text-n2-primary font-medium border-b-2 border-n2-accent px-3 py-2 text-sm">PORTFOLIO</a>
+                        <a href="contact.html"
+                            class="bg-gradient-to-r from-n2-primary to-n2-secondary text-black px-6 py-2 rounded-full text-sm font-bold hover:shadow-lg transition-all">CONTACT</a>
+                    </div>
+                </div>
+                <!-- Mobile button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+                        id="mobile-menu-btn">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-black border-b border-gray-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">HOME</a>
+                <a href="services.html"
+                    class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">SERVICES</a>
+                <a href="portfolio.html"
+                    class="text-n2-primary block px-3 py-2 rounded-md text-base font-medium">PORTFOLIO</a>
+                <a href="contact.html"
+                    class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="min-h-screen pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-16">
+                <h1 class="font-display text-4xl md:text-6xl font-black mb-6" data-aos="zoom-in">SELECTED <span
+                        class="text-n2-accent">WORKS</span></h1>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap justify-center gap-4 mt-8" data-aos="fade-up">
+                    <button
+                        class="filter-btn active px-6 py-2 border border-gray-700 rounded-full hover:border-n2-primary transition-all"
+                        onclick="filterPortfolio('all')">ALL</button>
+                    <button
+                        class="filter-btn px-6 py-2 border border-gray-700 rounded-full hover:border-n2-primary transition-all"
+                        onclick="filterPortfolio('logo')">LOGOS</button>
+                    <button
+                        class="filter-btn px-6 py-2 border border-gray-700 rounded-full hover:border-n2-primary transition-all"
+                        onclick="filterPortfolio('tshirt')">T-SHIRTS</button>
+                    <button
+                        class="filter-btn px-6 py-2 border border-gray-700 rounded-full hover:border-n2-primary transition-all"
+                        onclick="filterPortfolio('thumbnail')">THUMBNAILS</button>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+
+                <!-- Item 1: Thumbnail -->
+                <div class="portfolio-item group relative h-64 bg-gray-900 rounded-xl overflow-hidden cursor-pointer"
+                    data-category="thumbnail" data-aos="fade-up">
+                    <img src="https://source.unsplash.com/random/800x600/?gaming,thumbnail" alt="Project"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="overlay absolute inset-0 bg-black bg-opacity-80 opacity-0 transition-opacity duration-300 flex items-center justify-center p-6 text-center">
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-n2-accent mb-2">Gaming Channel</h3>
+                            <p class="text-sm text-gray-300">YouTube Thumbnail Design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Logo -->
+                <div class="portfolio-item group relative h-64 bg-gray-900 rounded-xl overflow-hidden cursor-pointer"
+                    data-category="logo" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://source.unsplash.com/random/800x600/?neon,logo" alt="Project"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="overlay absolute inset-0 bg-black bg-opacity-80 opacity-0 transition-opacity duration-300 flex items-center justify-center p-6 text-center">
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-n2-secondary">Cyber Tech</h3>
+                            <p class="text-sm text-gray-300">Brand Identity</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: T-Shirt -->
+                <div class="portfolio-item group relative h-64 bg-gray-900 rounded-xl overflow-hidden cursor-pointer"
+                    data-category="tshirt" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://source.unsplash.com/random/800x600/?tshirt,design" alt="Project"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="overlay absolute inset-0 bg-black bg-opacity-80 opacity-0 transition-opacity duration-300 flex items-center justify-center p-6 text-center">
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-n2-primary">Street Rebel</h3>
+                            <p class="text-sm text-gray-300">Merch Design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Thumbnail -->
+                <div class="portfolio-item group relative h-64 bg-gray-900 rounded-xl overflow-hidden cursor-pointer"
+                    data-category="thumbnail" data-aos="fade-up">
+                    <img src="https://source.unsplash.com/random/800x600/?youtube,cover" alt="Project"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="overlay absolute inset-0 bg-black bg-opacity-80 opacity-0 transition-opacity duration-300 flex items-center justify-center p-6 text-center">
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-n2-accent mb-2">Vlog Daily</h3>
+                            <p class="text-sm text-gray-300">YouTube Thumbnail</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5: T-Shirt -->
+                <div class="portfolio-item group relative h-64 bg-gray-900 rounded-xl overflow-hidden cursor-pointer"
+                    data-category="tshirt" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://source.unsplash.com/random/800x600/?fashion,streetwear" alt="Project"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="overlay absolute inset-0 bg-black bg-opacity-80 opacity-0 transition-opacity duration-300 flex items-center justify-center p-6 text-center">
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-n2-primary">Urban Flow</h3>
+                            <p class="text-sm text-gray-300">T-Shirt Print</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6: Logo -->
+                <div class="portfolio-item group relative h-64 bg-gray-900 rounded-xl overflow-hidden cursor-pointer"
+                    data-category="logo" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://source.unsplash.com/random/800x600/?minimal,logo" alt="Project"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="overlay absolute inset-0 bg-black bg-opacity-80 opacity-0 transition-opacity duration-300 flex items-center justify-center p-6 text-center">
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-n2-secondary">Flux Energy</h3>
+                            <p class="text-sm text-gray-300">Monogram Logo</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-900 pt-8 pb-8 text-center text-gray-600">
+        <p>&copy; 2024 𝙉² Marketing.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+
+        // Mobile Menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Filtering Logic
+        function filterPortfolio(category) {
+            // Button styles
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-n2-primary', 'text-black', 'border-n2-primary');
+                if ((btn.textContent.toLowerCase() === category) || (btn.textContent === 'ALL' && category === 'all')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            const items = document.querySelectorAll('.portfolio-item');
+            items.forEach(item => {
+                const itemCat = item.getAttribute('data-category');
+                if (category === 'all' || itemCat === category) {
+                    item.style.display = 'block';
+                    // Re-trigger animation if needed
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
